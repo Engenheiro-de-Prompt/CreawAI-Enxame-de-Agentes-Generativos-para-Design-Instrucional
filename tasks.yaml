@@ -1,0 +1,63 @@
+tarefas:
+  - description: |
+      Supervisionar a produção de um material didático completo sobre o tema determinado pelo usuário.
+      O material deve incluir:
+      1. Um artigo detalhado com fontes.
+      2. Aulas em formato heutagógico.
+      3. Trabalhos e atividades relacionados ao tema.
+      4. Questões de avaliação com feedback detalhado.
+      O material deve ser revisado e aperfeiçoado para garantir alta qualidade pedagógica.
+    expected_output: |
+      Um pacote educacional completo que inclui:
+      - Artigo em markdown com fontes.
+      - Aulas em formato heutagógico.
+      - Trabalhos e atividades detalhados.
+      - Questões de avaliação com feedback.
+      - Relatório de revisão e curadoria do conteúdo.
+    tools:
+      - SerperDevTool
+    agent: "Gerente de Educação"
+    async_execution: False
+    output_file: "material-didatico-completo.zip"
+
+  - description: |
+      Crie um artigo completo sobre o assunto determinado pelo usuário.
+      Salve todas as fontes usadas.
+    expected_output: "Um artigo completo de 4 capítulos sobre o tema inserido pelo usuário:  [energia renovavel, fundamentos e principais fontes], formatado como markdown."
+    tools:
+      - SerperDevTool
+    agent: "Escritor de Artigos"
+    async_execution: False
+    output_file: "artigo-completo.md"
+
+  - description: |
+      Leia e analise todos os arquivos no diretório especificado.
+    expected_output: "Um relatório detalhado do conteúdo dos arquivos."
+    tools: []
+    agent: "Leitor de Arquivos"
+    async_execution: False
+    parameters:
+      directory_path: "/home/virtualis/Área de Trabalho/Assistent/CrewAI 1/CrewAI educacional/"
+
+  - description: |
+      Verifique a precisão das informações no artigo e sugira melhorias.
+      Mantenha uma postura neutra e objetiva, evitando opiniões pessoais.
+    expected_output: "Um relatório detalhado sobre a precisão das informações e sugestões de melhorias no artigo."
+    tools:
+      - SerperDevTool
+    agent: "Crítico de Aulas"
+    async_execution: False
+
+  - description: |
+      Transforme o roteiro do artigo em um formato pedagógico heutagógico.
+    expected_output: "Um roteiro de aula heutagógico completo, adaptado para aprendizagem auto-determinada."
+    tools: []
+    agent: "Pedagogia Heutagógica"
+    async_execution: False
+
+  - description: |
+      Elabore questões de acordo com o conteúdo do artigo e forneça feedback para os alunos.
+    expected_output: "Questões detalhadas com feedback para os alunos, baseadas no conteúdo do artigo."
+    tools: []
+    agent: "Aplicador de Questões"
+    async_execution: False
