@@ -1,4 +1,4 @@
-# Enxame de Agentes Generativos para Design Instrucional - Creaw-AI
+# Enxame de Agentes Generativos para Design Instrucional - Crew-AI
 
 ## Descrição
 
